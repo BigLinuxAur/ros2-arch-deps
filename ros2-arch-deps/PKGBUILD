@@ -11,7 +11,7 @@ url="https://docs.ros.org/"
 arch=('any')
 license=('none')
 
-depends=('python-bloom' 'python-rosinstall-generator'
+depends=( 'python-bloom' 'python-rosinstall-generator'
   'asio'
   'bullet'
   'cmake'
@@ -59,7 +59,7 @@ depends=('python-bloom' 'python-rosinstall-generator'
   'python-vcstool'
 )
 
-optdepends=(
+optdepends=( 'python-bloom' 'python-rosinstall-generator'
   'ogre-legacy: backwards-compatible Ogre engine'
   'python-matplotlib: for plotting in rqt'
   'python-pydot: running the node graph in rqt'
