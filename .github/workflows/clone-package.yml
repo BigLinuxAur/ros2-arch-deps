@@ -48,7 +48,7 @@ jobs:
         run: |
           gitfolder=$(find -type f -name PKGBUILD | sed 's/PKGBUILD//')
           cd $gitfolder
-          sed -i "/depends=/s/(/( \'python-bloom\' \'python-rosinstall-generator\'/" PKGBUILD
+          sed -i "/\bdepends=/s/(/( \'python-bloom\' \'python-rosinstall-generator\'/" PKGBUILD
           # sed -i "/makedepends=/s/)/ \'xpto\')/" PKGBUILD
 
       - name: Update github
@@ -70,4 +70,4 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           event-type: build
-          client-payload: '{"bigbranch": "${{ github.event.client_payload.branch }}", "pkgver": "${{ github.event.client_payload.pkgver }}" }'
+          client-payload: '{"bigbranch": "${{ github.event.client_payload.branch }}" }'
